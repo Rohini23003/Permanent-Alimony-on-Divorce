@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permanent Alimony on Divorce in the Supreme Court of India (2021–2026)</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 1100px; margin: 0 auto; padding: 20px; background: #fdfdfd; }
+        header { border-bottom: 2px solid #eaeaea; padding-bottom: 20px; margin-bottom: 30px; }
+        h1 { color: #1a252f; margin-bottom: 5px; }
+        .subtitle { color: #7f8c8d; font-size: 1.1em; }
+        .team-badge { display: inline-block; background: #e2e8f0; padding: 4px 12px; border-radius: 12px; font-weight: 600; font-size: 0.9em; margin-top: 10px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 40px; }
+        .card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+        h2 { color: #2c3e50; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-top: 0; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.9em; }
+        th, td { border: 1px solid #cbd5e1; padding: 10px; text-align: left; }
+        th { background: #f8fafc; font-weight: 600; }
+        footer { text-align: center; margin-top: 50px; font-size: 0.9em; color: #64748b; border-top: 1px solid #eaeaea; padding-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Permanent Alimony on Divorce in the Supreme Court of India (2021–2026)</h1>
+        <div class="subtitle">An Empirical Analysis of Doctrinal Evolution, Article 142 Applications, and Quantum Trends</div>
+        <div class="team-badge">Team ROAM: Amisha Mehta & Rohini Abhyankar</div>
+    </header>
+
+    <section>
+        <h2>Executive Summary & Trend Analysis</h2>
+        <p>This empirical study analyzes 21 reasoned judgments delivered by the Supreme Court of India between September 2021 and August 2026 concerning permanent alimony upon divorce. Key doctrinal shifts highlight the routine invocation of <strong>Article 142 of the Constitution</strong> to grant direct decrees of divorce on grounds of "irretrievable breakdown of marriage," coupled with substantial upward revisions of permanent alimony to ensure parity in living standards.</p>
+    </section>
+
+    <div class="grid">
+        <div class="card">
+            <h2>Judgments per Year (Total: 21)</h2>
+            <canvas id="yearChart"></canvas>
+            <p style="font-size: 0.85em; color: #64748b; margin-top: 15px;">Shows a notable surge in Supreme Court adjudications regarding permanent alimony and matrimonial disputes, peaking significantly in 2024 and 2025.</p>
+        </div>
+        <div class="card">
+            <h2>Outcome Breakdown</h2>
+            <canvas id="outcomeChart"></canvas>
+            <p style="font-size: 0.85em; color: #64748b; margin-top: 15px;">Reflects appellate balancing of relief, with 8 judgments allowed, 7 partly allowed, 1 dismissed, and 4 classified under other procedural resolutions.</p>
+        </div>
+    </div>
+
+    <div class="card" style="margin-bottom: 40px;">
+        <h2>Type of Case Distribution</h2>
+        <div style="max-width: 550px; margin: 0 auto;">
+            <canvas id="typeChart"></canvas>
+        </div>
+        <p style="font-size: 0.85em; color: #64748b; margin-top: 15px; text-align: center;">Civil Appeals (9) and Special Leave Petitions (6) form the bulk of legal entries, followed by Criminal Appeals (4) arising from maintenance or domestic violence disputes.</p>
+    </div>
+
+    <section>
+        <h2>Dataset Overview</h2>
+        <p>Complete records are maintained in <a href="data.xlsx" target="_blank">data.xlsx</a> and viewable as raw tabular data in <a href="data.csv" target="_blank">data.csv</a>.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Case Name</th>
+                    <th>Citation / Case No.</th>
+                    <th>Year</th>
+                    <th>Type of Case</th>
+                    <th>Outcome</th>
+                    <th>Main Provision</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>Poonam Devi v. Surender Kumar</td><td>C.A. No. 005195/2022</td><td>2022</td><td>Civil Appeal</td><td>Partly Allowed</td><td>HMA / Maintenance</td></tr>
+                <tr><td>2</td><td>Hironmoy Sen v. State of W.B.</td><td>(2022) 16 SCC 417</td><td>2021</td><td>Criminal Appeal</td><td>Allowed</td><td>Art. 142 / s. 13B HMA</td></tr>
+                <tr><td>3</td><td>Rakesh Raman v. Kavita</td><td>2023 INSC 433</td><td>2023</td><td>Civil Appeal</td><td>Allowed</td><td>s. 13(1)(ia), (ib) HMA</td></tr>
+                <tr><td>4</td><td>Jatinder Kumar Sapra v. Anupama Sapra</td><td>2024 INSC 382</td><td>2024</td><td>Civil Appeal</td><td>Allowed</td><td>Art. 142 / s. 13(1)(ia) HMA</td></tr>
+                <tr><td>5</td><td>Trisha Singh v. Anurag Kumar</td><td>2024 INSC 450</td><td>2024</td><td>Other</td><td>Partly Allowed</td><td>s. 9 HMA / Art. 142</td></tr>
+                <tr><td>6</td><td>Vikas Kanaujia v. Sarita</td><td>2024 INSC 517</td><td>2024</td><td>SLP</td><td>Allowed</td><td>s. 13 HMA / Art. 142</td></tr>
+                <tr><td>7</td><td>Kiran Jyot Maini v. Anish Pramod Patel</td><td>2024 INSC 530</td><td>2024</td><td>Criminal Appeal</td><td>Partly Allowed</td><td>s. 12, 23 PWDVA 2005</td></tr>
+                <tr><td>8</td><td>Amutha v. A.R. Subramanian</td><td>2024 INSC 1033</td><td>2024</td><td>Civil Appeal</td><td>Dismissed</td><td>s. 13(1)(ia), (ib) HMA</td></tr>
+                <tr><td>9</td><td>Rinku Baheti v. Sandesh Sharda</td><td>2024 INSC 1014</td><td>2024</td><td>Other</td><td>Other</td><td>Art 142 / s. 25 CPC</td></tr>
+                <tr><td>10</td><td>Sukhdev Singh v. Sukhbir Kaur</td><td>2025 INSC 197</td><td>2025</td><td>Civil Appeal</td><td>Other</td><td>s. 5, 11, 24, 25 HMA</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Team ROAM (Symbiosis Law School, Nagpur). Published under MIT License.</p>
+    </footer>
+
+    <script>
+        // Chart 1: Judgments per Year (Exact match to 21 counts)
+        new Chart(document.getElementById('yearChart'), {
+            type: 'bar',
+            data: {
+                labels: ['2021', '2022', '2023', '2024', '2025', '2026'],
+                datasets: [{
+                    label: 'Number of Judgments',
+                    data: [1, 1, 1, 6, 11, 1],
+                    backgroundColor: '#3b82f6',
+                    borderRadius: 4
+                }]
+            },
+            options: { responsive: true, scales: { y: { beginAtZero: true, ticks: { stepSize: 2 } } } }
+        });
+
+        // Chart 2: Outcome Breakdown (Exact match to 21 counts)
+        new Chart(document.getElementById('outcomeChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Allowed', 'Partly Allowed', 'Dismissed', 'Other'],
+                datasets: [{
+                    data: [8, 7, 1, 4],
+                    backgroundColor: ['#10b981', '#f59e0b', '#ef4444', '#64748b']
+                }]
+            },
+            options: { responsive: true }
+        });
+
+        // Chart 3: Type of Case (Exact match to 21 counts)
+        new Chart(document.getElementById('typeChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Civil Appeal', 'Criminal Appeal', 'SLP', 'Other'],
+                datasets: [{
+                    label: 'Judgments',
+                    data: [9, 4, 6, 2],
+                    backgroundColor: '#6366f1',
+                    borderRadius: 4
+                }]
+            },
+            options: { responsive: true, scales: { y: { beginAtZero: true, ticks: { stepSize: 2 } } } }
+        });
+    </script>
+</body>
+</html>
